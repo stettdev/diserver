@@ -1,1 +1,1 @@
-# disconomy-api
+# D:Server - backend for Disconomy bot
