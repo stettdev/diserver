@@ -1,1 +1,1 @@
-# D:Server - backend for Disconomy bot
+# Diserver - backend for Disconomy bot
