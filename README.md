@@ -1,4 +1,4 @@
-# **Diserver** - backend for Disconomy bot
+# **Diserver API** - backend for Disconomy bot
 
 ![GitHub tag master](https://img.shields.io/github/v/tag/stettdev/diserver?label=master) ![GitHub last commit](https://img.shields.io/github/last-commit/stettdev/diserver) [![CodeFactor](https://www.codefactor.io/repository/github/stettdev/diserver/badge)](https://www.codefactor.io/repository/github/stettdev/diserver)
 
