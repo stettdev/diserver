@@ -1,43 +1,57 @@
 const express = require('express');
-const { Account } = require('../database');
-const requirePerson = require('../modules/requirePerson');
+const { createAccount, deleteAccount, readAccount } = require('../database/crud/accounts');
+const { verifyPersonId } = require('../middleware/paramsMiddleware');
 
 const router = express.Router();
-const getAccount = async (ownerId) => Account.findOne({ where: { ownerId } });
-// const getPerson = async (guildId, userId) => Person.findOne({ where: { guildId, userId } });
-
-const hasOnlyDigits = (input) => !input.match(/\D+/g);
 
 router.get('/', (req, res) => {
-  res.status(200).send('WOOOOO!');
+  res.status(500);
 });
 
-router.get('/:guildId.:userId/balance', async (req, res) => {
-  const { guildId, userId } = req.params;
+router.use('/:personId', verifyPersonId);
+router.get('/:personId', async (req, res) => {
+  const { personId } = req.params;
+  let account;
 
-  const errors = [];
-  if (!guildId) {
-    errors.push('guildId has not been found');
-  } else if (!hasOnlyDigits(guildId)) {
-    errors.push('found non-digit characters in guildId');
+  try {
+    account = await readAccount(personId);
+  } catch (error) {
+    return res.status(500).send({ message: 'There was an issue while searching for an Account' });
   }
 
-  if (!userId) {
-    errors.push('userId has not been found');
-  } else if (!hasOnlyDigits(userId)) {
-    errors.push('found non-digit characters in userId');
-  }
-
-  if (errors.length > 0) {
-    return res.status(400).send({ message: `Incomplete request: ${errors.join(', ')}` });
-  }
-
-  const person = await requirePerson(guildId, userId);
-  const account = await getAccount(person.id);
   if (!account) {
     return res.status(404).send({ message: 'Account not found' });
   }
-  return res.status(200).send({ balance: account.balance });
+
+  return res.status(200).send({ account });
+});
+
+router.use('/open/:personId', verifyPersonId);
+router.post('/open/:personId', async (req, res) => {
+  const { personId } = req.params;
+  let account;
+
+  try {
+    account = await createAccount(personId);
+  } catch (error) {
+    return res.status(500).send({ message: 'There was an issue while creating an Account' });
+  }
+
+  return res.status(200).send({ account });
+});
+
+router.use('/close/:personId', verifyPersonId);
+router.post('/close/:personId', async (req, res) => {
+  const { personId } = req.params;
+  let account;
+
+  try {
+    account = await deleteAccount(personId);
+  } catch (error) {
+    return res.status(500).send({ message: 'There was an issue while creating an Account' });
+  }
+
+  return res.status(200).send({ account });
 });
 
 module.exports = router;
