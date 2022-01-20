@@ -2,11 +2,13 @@
 
 ![GitHub tag master](https://img.shields.io/github/v/tag/stettdev/diserver?label=master) ![GitHub last commit](https://img.shields.io/github/last-commit/stettdev/diserver) [![CodeFactor](https://www.codefactor.io/repository/github/stettdev/diserver/badge)](https://www.codefactor.io/repository/github/stettdev/diserver)
 
+REST API and backend for Disconomy, an economy and roleplay Discord bot.
 ## **Table of contents**
 
 ---
 
 * [Technologies](#technologies)
+* [API Routes](#api-routes)
 * [Contact the developer](#contact-the-developer)
 
 ---
@@ -20,6 +22,10 @@ I found creating and API with Express.js routers rather simple. Implementing my 
 [![Sequelize](https://img.shields.io/badge/Sequelize-v6-03AFEF?logo=Sequelize&logoColor=fff)](https://www.sequelize.org/) [![MySQL](https://img.shields.io/badge/MySQL-8.0-F29111?logo=mySQL&logoColor=fff)](https://www.mysql.com/)
 
 This was my first-time using Sequelize in a project. It's a surprisingly complex ORM for SQL database solutions but the documentation explains everything well and the project was developed rather quickly using it. Having a model of data and a tool for migrations was such a relief further into the development I went.
+
+## **API Routes**
+
+[IN DEVELOPMENT]
 
 ## **Contact the developer**
 
