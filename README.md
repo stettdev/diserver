@@ -1,6 +1,6 @@
 # **Diserver API** - backend for Disconomy bot
 
-![GitHub tag master](https://img.shields.io/github/v/tag/stettdev/diserver?label=master) ![GitHub last commit](https://img.shields.io/github/last-commit/stettdev/diserver) [![CodeFactor](https://www.codefactor.io/repository/github/stettdev/diserver/badge)](https://www.codefactor.io/repository/github/stettdev/diserver)
+![GitHub tag version](https://img.shields.io/github/v/tag/stettdev/diserver?label=version) ![GitHub last commit](https://img.shields.io/github/last-commit/stettdev/diserver) [![CodeFactor](https://www.codefactor.io/repository/github/stettdev/diserver/badge)](https://www.codefactor.io/repository/github/stettdev/diserver)
 
 REST API and backend for Disconomy, an economy and roleplay Discord bot.
 ## **Table of contents**
